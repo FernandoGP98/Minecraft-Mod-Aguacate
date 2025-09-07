@@ -1,5 +1,7 @@
 package net.conamigos.aguacatemod;
 
+import net.conamigos.aguacatemod.item.ModItems;
+import net.conamigos.aguacatemod.item.ModItemsGroups;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,7 +20,8 @@ public class AguacateMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		ModItemsGroups.registerItemGroups();
 
-		LOGGER.info("Hello Fabric world!");
+		ModItems.registerModItems();
 	}
 }
