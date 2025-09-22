@@ -1,5 +1,6 @@
 package net.conamigos.aguacatemod;
 
+import net.conamigos.aguacatemod.block.ModBlocks;
 import net.conamigos.aguacatemod.item.ModItems;
 import net.conamigos.aguacatemod.item.ModItemsGroups;
 import net.fabricmc.api.ModInitializer;
@@ -21,7 +22,7 @@ public class AguacateMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItemsGroups.registerItemGroups();
-
+		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 	}
 }

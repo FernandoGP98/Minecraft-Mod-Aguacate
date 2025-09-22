@@ -1,9 +1,11 @@
 package net.conamigos.aguacatemod.item.Ingredients.AvocadoItem;
 
+import net.conamigos.aguacatemod.block.ModBlocks;
 import net.conamigos.aguacatemod.item.Ingredients.IngredientItems;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 
 public class AvocadoItem extends IngredientItems {
@@ -20,7 +22,7 @@ public class AvocadoItem extends IngredientItems {
     public static void register() {
         if (AVOCADO == null) {
             AVOCADO = IngredientItems.register("avocado",
-                    new Item(new Item.Settings().food(AVOCADO_CONFIG)));
+                    new AliasedBlockItem(ModBlocks.AVOCADO_BUSH, new Item.Settings().food(AVOCADO_CONFIG)));
         }
     }
 

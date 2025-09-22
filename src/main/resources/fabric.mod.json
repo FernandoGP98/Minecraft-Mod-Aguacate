@@ -18,6 +18,7 @@
 		"main": [
 			"net.conamigos.aguacatemod.AguacateMod"
 		],
+		"client": [ "net.conamigos.aguacatemod.AguacateModClient" ],
 		"fabric-datagen": [
 			"net.conamigos.aguacatemod.AguacateModDataGenerator"
 		]

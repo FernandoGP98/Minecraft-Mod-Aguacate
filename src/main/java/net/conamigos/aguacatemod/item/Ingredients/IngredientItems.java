@@ -15,7 +15,7 @@ public class IngredientItems {
         return Registry.register(Registries.ITEM, Identifier.of(AguacateMod.MOD_ID, name), item);
     }
 
-    public static void registerAll() {
+    public static void registerAllIngredients() {
         // 1) Registrar TODOS los items aquí (mientras los registries no están congelados)
         AvocadoItem.register();
         // Si luego hay más: SalsaRojaItem.register(); CarneAsadaItem.register(); ...
