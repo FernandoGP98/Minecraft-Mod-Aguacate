@@ -1,5 +1,7 @@
 package net.conamigos.aguacatemod.datagen;
 
+import net.conamigos.aguacatemod.block.Bushes.AvocadoBush;
+import net.conamigos.aguacatemod.block.ModBlocks;
 import net.conamigos.aguacatemod.item.Ingredients.AvocadoItem.AvocadoItem;
 import net.conamigos.aguacatemod.util.ModIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -27,11 +29,16 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK);
+       blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.AVOCADO_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED,
+                AvocadoBush.AGE, 0, 1, 2, 3);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        genSimple(itemModelGenerator, ModIds.AVOCADO);
+        //Explicacion: Se elimina la generacion del objeto avocado de aqui
+        // ya que ahora lo realizara la cracion del arbusto en el metodo de
+        // generateBlockStateModels
+
+        //genSimple(itemModelGenerator, ModIds.AVOCADO);
     }
 }
