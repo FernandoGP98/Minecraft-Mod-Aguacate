@@ -7,6 +7,6 @@ public class ModItems {
     public static void registerModItems(){
         AguacateMod.LOGGER.info("Registering Mod Items for " + AguacateMod.MOD_ID);
 
-        IngredientItems.registerAll();
+        IngredientItems.registerAllIngredients();
     }
 }
