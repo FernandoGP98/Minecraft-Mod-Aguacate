@@ -1,3 +1,7 @@
+
+# Fabric data generation cache
+src/main/generated/
+
 # gradle
 
 .gradle/
