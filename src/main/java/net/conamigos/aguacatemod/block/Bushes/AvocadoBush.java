@@ -1,13 +1,9 @@
 package net.conamigos.aguacatemod.block.Bushes;
 
-import net.conamigos.aguacatemod.block.ModBlocks;
 import net.conamigos.aguacatemod.item.Ingredients.AvocadoItem.AvocadoItem;
 import net.minecraft.block.*;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;

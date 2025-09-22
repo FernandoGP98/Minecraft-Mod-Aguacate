@@ -3,8 +3,11 @@ package net.conamigos.aguacatemod;
 import net.conamigos.aguacatemod.block.ModBlocks;
 import net.conamigos.aguacatemod.item.ModItems;
 import net.conamigos.aguacatemod.item.ModItemsGroups;
+import net.conamigos.aguacatemod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.minecraft.block.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,5 +27,13 @@ public class AguacateMod implements ModInitializer {
 		ModItemsGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
+
+		ModWorldGeneration.generateModWorldGen();
+
+		addFlammableBlock(ModBlocks.AVOCADO_LEAVES, 30, 60);
+	}
+
+	private void addFlammableBlock(Block block, int burn, int spread){
+		FlammableBlockRegistry.getDefaultInstance().add(block, burn, spread);
 	}
 }
