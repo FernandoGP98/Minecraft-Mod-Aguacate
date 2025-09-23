@@ -1,3 +1,5 @@
-// 1.21.1	2025-09-22T16:05:23.4169013	Aguacate Mod/
-5f8b80e710f4837dfcbd5627ae2804f2da48f051 data\aguacatemod\worldgen\configured_feature\avocado.json
-14c8dbc6bdb7ce0b86d4613337abb95f5cb27bd0 data\aguacatemod\worldgen\placed_feature\avocado_placed.json
+// 1.21.1	2025-09-22T21:32:13.2741673	Aguacate Mod/
+b460b4f9d925813c08c66c4515e9fe3dafe50354 data\aguacatemod\worldgen\placed_feature\avocado_placed_forest.json
+f9ed0c1d894b2cda58b09356536127f98b48d826 data\aguacatemod\worldgen\configured_feature\avocado.json
+6fd135127cf954c3ac7990cc1a73ae5667d29094 data\aguacatemod\worldgen\placed_feature\avocado_placed_jungle.json
+6fd135127cf954c3ac7990cc1a73ae5667d29094 data\aguacatemod\worldgen\placed_feature\avocado_placed_sparse_jungle.json

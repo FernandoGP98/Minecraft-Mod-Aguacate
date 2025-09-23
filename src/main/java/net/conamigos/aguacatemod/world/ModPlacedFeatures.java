@@ -7,21 +7,49 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ModPlacedFeatures {
 
-    public static final RegistryKey<PlacedFeature> AVOCADO_PLACED_KEY = registerKey("avocado_placed");
+    public static final Map<RegistryKey<Biome>, Integer> BIOME_RARITY = Map.of(
+            BiomeKeys.SPARSE_JUNGLE, 50,
+            BiomeKeys.JUNGLE, 50,
+            BiomeKeys.FOREST, 100
+    );
+
+    public static final List<RegistryKey<PlacedFeature>> AVOCADO_PLACED_KEYS = new ArrayList<>();
 
     public static void bootstrap(Registerable<PlacedFeature> context){
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
-        register(context, AVOCADO_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.AVOCADO_KEY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(0, 0.05F, 1), ModBlocks.AVOCADO_SAPLING
-                ));
+        var avocadoConfig = configuredFeatures.getOrThrow(ModConfiguredFeatures.AVOCADO_KEY);
+
+        for (Map.Entry<RegistryKey<Biome>, Integer> entry : BIOME_RARITY.entrySet()) {
+            RegistryKey<Biome> biomeKey = entry.getKey();
+            int rarity = entry.getValue();
+
+            String biomeName = biomeKey.getValue().getPath();
+            RegistryKey<PlacedFeature> placedKey = registerKey("avocado_placed_" + biomeName);
+
+            register(context, placedKey, avocadoConfig,
+                    List.of(
+                            RarityFilterPlacementModifier.of(rarity),
+                            SquarePlacementModifier.of(),
+                            PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                            BiomePlacementModifier.of(),
+                            BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(ModBlocks.AVOCADO_SAPLING.getDefaultState(), BlockPos.ORIGIN))
+                    ));
+
+            AVOCADO_PLACED_KEYS.add(placedKey);
+        }
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
