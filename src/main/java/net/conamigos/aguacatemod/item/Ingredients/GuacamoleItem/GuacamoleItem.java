@@ -12,7 +12,7 @@ public class GuacamoleItem extends IngredientItems {
             .saturationModifier(0.6f)  // saturación moderada
             .snack()                   // se consume rápido
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 8 * 20, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 20 * 20, 0), 0.30f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 20 * 20, 0), 1.0f)
             .build();
 
     public static Item GUACAMOLE;

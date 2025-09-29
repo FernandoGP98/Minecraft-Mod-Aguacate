@@ -14,7 +14,7 @@ public class AvocadoItem extends IngredientItems {
             .saturationModifier(0.4f)  // saturación moderada
             .snack()                   // se consume rápido
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 5 * 20, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 10 * 20, 0), 0.30f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 10 * 20, 0), 1.0f)
             .build();
 
     public static Item AVOCADO;
