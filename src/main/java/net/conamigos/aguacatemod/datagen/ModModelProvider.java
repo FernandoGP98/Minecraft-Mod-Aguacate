@@ -6,10 +6,7 @@ import net.conamigos.aguacatemod.item.Ingredients.AvocadoItem.AvocadoItem;
 import net.conamigos.aguacatemod.util.ModIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.*;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -31,11 +28,16 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.AVOCADO_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED,
                 AvocadoBush.AGE, 0, 1, 2, 3);
+
+       blockStateModelGenerator.registerSingleton(ModBlocks.AVOCADO_LEAVES, TexturedModel.LEAVES);
+       blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.AVOCADO_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         genSimple(itemModelGenerator, ModIds.AVOCADO);
         genSimple(itemModelGenerator, ModIds.GUACAMOLE);
+
+        itemModelGenerator.register(ModBlocks.AVOCADO_SAPLING.asItem(), Models.GENERATED);
     }
 }
