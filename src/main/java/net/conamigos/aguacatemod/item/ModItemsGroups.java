@@ -2,6 +2,8 @@ package net.conamigos.aguacatemod.item;
 
 import net.conamigos.aguacatemod.AguacateMod;
 import net.conamigos.aguacatemod.item.Ingredients.AvocadoItem.AvocadoItem;
+import net.conamigos.aguacatemod.item.Ingredients.GuacamoleItem.GuacamoleItem;
+import net.conamigos.aguacatemod.item.Seeds.AvocadoSeed.AvocadoSeed;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -18,6 +20,8 @@ public class ModItemsGroups {
                     .displayName(Text.translatable("item.aguacatemod.avocadoitems"))
                     .entries((displayContext, entries) -> {
                       entries.add(AvocadoItem.AVOCADO);
+                      entries.add(GuacamoleItem.GUACAMOLE);
+                      entries.add(AvocadoSeed.AVOCADO_SEED);
                     }).build());
 
     /*public static final ItemGroup AVOCADO_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,

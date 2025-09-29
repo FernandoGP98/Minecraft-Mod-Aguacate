@@ -1,9 +1,6 @@
 package net.conamigos.aguacatemod;
 
-import net.conamigos.aguacatemod.datagen.ModBlockTagProvider;
-import net.conamigos.aguacatemod.datagen.ModItemTagProvider;
-import net.conamigos.aguacatemod.datagen.ModLootTableProvider;
-import net.conamigos.aguacatemod.datagen.ModModelProvider;
+import net.conamigos.aguacatemod.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -16,5 +13,6 @@ public class AguacateModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }

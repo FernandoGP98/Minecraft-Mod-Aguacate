@@ -22,7 +22,8 @@ public class AvocadoItem extends IngredientItems {
     public static void register() {
         if (AVOCADO == null) {
             AVOCADO = IngredientItems.register("avocado",
-                    new AliasedBlockItem(ModBlocks.AVOCADO_BUSH, new Item.Settings().food(AVOCADO_CONFIG)));
+                    new Item(new Item.Settings().food(AVOCADO_CONFIG))
+            );
         }
     }
 
