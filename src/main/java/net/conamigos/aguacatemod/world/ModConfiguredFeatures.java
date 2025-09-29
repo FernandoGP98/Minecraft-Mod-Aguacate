@@ -15,6 +15,7 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
@@ -25,11 +26,11 @@ public class ModConfiguredFeatures {
 
         register(context, AVOCADO_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(Blocks.OAK_LOG),
-                new StraightTrunkPlacer(5, 6, 5),
+                new ForkingTrunkPlacer(5, 1, 2),
                 BlockStateProvider.of(ModBlocks.AVOCADO_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), 3),
+                new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(1), 4),
 
-                new TwoLayersFeatureSize(1, 0, 2)
+                new TwoLayersFeatureSize(2, 0, 3)
         ).build());
 
     }
