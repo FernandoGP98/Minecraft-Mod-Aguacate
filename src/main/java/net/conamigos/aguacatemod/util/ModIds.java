@@ -6,6 +6,9 @@ import net.minecraft.util.Identifier;
 public class ModIds {
     private ModIds() {}
     public static final String AVOCADO = "avocado";
+    public static final String GUACAMOLE = "guacamole";
+    public static final String AVOCADO_SEED = "avocado_seed";
+
 
     public static Identifier id(String path) {
         return Identifier.of(AguacateMod.MOD_ID, path);

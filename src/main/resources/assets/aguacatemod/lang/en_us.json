@@ -1,7 +1,15 @@
 {
   "item.aguacatemod.avocado": "Avocado",
+
+  "item.aguacatemod.avocado.tooltip": "Its name in nahuatl is 'Ahucatl'",
+  "item.aguacatemod.guacamole": "Guacamole",
+  "item.aguacatemod.guacamole.tooltip": "The guacamole everyone loves.",
+  "item.aguacatemod.avocado_seed": "Avocado Seed",
+  "item.aguacatemod.avocado_seed.tooltip": "Plant it to cultivate more avocados.",
+  
   "block.aguacatemod.avocado_leaves": "Avocado Leaves",
   "block.aguacatemod.avocado_sapling": "Avocado Sapling",
+
 
   "item.aguacatemod.avocadoitems": "Avocado Mod Items"
 }

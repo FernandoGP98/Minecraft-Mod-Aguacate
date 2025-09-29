@@ -35,11 +35,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        //Explicacion: Se elimina la generacion del objeto avocado de aqui
-        // ya que ahora lo realizara la cracion del arbusto en el metodo de
-        // generateBlockStateModels
+        genSimple(itemModelGenerator, ModIds.AVOCADO);
+        genSimple(itemModelGenerator, ModIds.GUACAMOLE);
 
-        //genSimple(itemModelGenerator, ModIds.AVOCADO);
         itemModelGenerator.register(ModBlocks.AVOCADO_SAPLING.asItem(), Models.GENERATED);
     }
 }

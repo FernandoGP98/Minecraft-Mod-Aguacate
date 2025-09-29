@@ -2,6 +2,7 @@ package net.conamigos.aguacatemod.item.Ingredients;
 
 import net.conamigos.aguacatemod.AguacateMod;
 import net.conamigos.aguacatemod.item.Ingredients.AvocadoItem.AvocadoItem;
+import net.conamigos.aguacatemod.item.Ingredients.GuacamoleItem.GuacamoleItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -18,11 +19,13 @@ public class IngredientItems {
     public static void registerAllIngredients() {
         // 1) Registrar TODOS los items aquí (mientras los registries no están congelados)
         AvocadoItem.register();
+        GuacamoleItem.register();
         // Si luego hay más: SalsaRojaItem.register(); CarneAsadaItem.register(); ...
 
         // 2) Ahora sí podemos agregarlos al creative tab (solo lectura)
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(AvocadoItem.AVOCADO);
+            entries.add(GuacamoleItem.GUACAMOLE);
         });
     }
 }

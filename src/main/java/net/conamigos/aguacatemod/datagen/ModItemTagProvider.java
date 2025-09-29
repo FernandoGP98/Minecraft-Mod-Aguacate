@@ -19,6 +19,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(ModTags.Items.AVOCADO)
-                .addOptional(Identifier.of(AguacateMod.MOD_ID, "avocado"));
+                .addOptional(Identifier.of(AguacateMod.MOD_ID, "avocado"))
+                .addOptional(Identifier.of(AguacateMod.MOD_ID, "guacamole"));
     }
 }
